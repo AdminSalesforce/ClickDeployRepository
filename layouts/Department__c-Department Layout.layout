@@ -26,6 +26,10 @@
                 <behavior>Edit</behavior>
                 <field>Staff_Count__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Section__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

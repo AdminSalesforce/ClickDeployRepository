@@ -1197,6 +1197,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Department__c.Section__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Department__c.Staff_Count__c</field>
         <readable>false</readable>
     </fieldPermissions>
