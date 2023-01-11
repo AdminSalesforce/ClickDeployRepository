@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Email Address --></label>
+        <name>Account_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type Select --></label>
+        <name>Account_Type_Select__c</name>
+        <picklistValues>
+            <masterLabel>VALUE1</masterLabel>
+            <translation><!-- VALUE1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VALUE2</masterLabel>
+            <translation><!-- VALUE2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VALUE3</masterLabel>
+            <translation><!-- VALUE3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Address 1 --></label>
+        <name>Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese</masterLabel>
+            <translation><!-- Chinese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <recordTypes>
+        <description>Una cuenta que representa un hogar que contiene una o más personas.</description>
+        <label>Cuenta de hogar</label>
+        <name>HH_Account</name>
+    </recordTypes>
+    <recordTypes>
+        <description>Una cuenta que representa una organización</description>
+        <label>Organización</label>
+        <name>Organization</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Email_Docs --></label>
+        <name>SDOC__Email_Docs</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- S_Docs --></label>
+        <name>SDOC__S_Docs</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Forecast</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Forecasts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master_ID --></label>
+        <name>Master_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master --></label>
+        <name>Master__c</name>
+        <relationshipLabel><!-- Forecasts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>ymohanasundaram@demandblue.com</contactEmail>
+    <label>ODS Metadata Deployer DevPack</label>
+    <oauthConfig>
+        <callbackUrl>https://devpack-dev-ed.my.salesforce.com/services/authcallback/CopadoDev1</callbackUrl>
+        <consumerKey>3MVG9zZht._ZaMunSyA2AdQcEvlrYA1an_V1lSOrtPej1SpyG3jUfG_MDLEoPt3a7WJt8RQLhSLymNr8feuL_</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>
