@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Master</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Masters</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can_Edit_Today --></label>
+        <name>Can_Edit_Today__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FiscalWeek --></label>
+        <name>FiscalWeek__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forecast --></label>
+        <name>Owner__c</name>
+        <relationshipLabel><!-- Masters --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

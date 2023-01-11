@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>sfadmin1@demandblue.com</contactEmail>
+    <label>MetadataPoC1</label>
+    <oauthConfig>
+        <callbackUrl>https://demandblue--sfdclabs.my.salesforce.com/services/authcallback/CopadoDev1</callbackUrl>
+        <consumerKey>3MVG9zZht._ZaMunSyA2AdQcEvvN9dX.ifIaTPKlpIwYVUYOikObVnRZcLlaRrhrcjpBYm8p0_3B15QUBlzEe</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>
