@@ -222,9 +222,11 @@
         <fullName>Subject__c</fullName>
         <externalId>false</externalId>
         <label>Subject</label>
+        <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>TextArea</type>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Department</label>
     <nameField>
