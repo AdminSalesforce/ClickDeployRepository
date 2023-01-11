@@ -1,0 +1,62 @@
+<apex:page controller="ODSDExcelController" contentType="application/vnd.ms-excel#CaseSheet.xls" cache="true">
+  <apex:outputText value="{!xlsHeader}"/>
+    <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:x="urn:schemas-microsoft-com:office:excel"
+    xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+    xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Styles>
+   <Style ss:ID="s1">
+   <Alignment/>
+   <Borders/>
+   <Font ss:Bold="1"/>
+   <Interior/>
+    <NumberFormat/>
+    <Protection/>
+     </Style>
+   </Styles>
+  <Worksheet ss:Name="Case">
+  <Table x:FullColumns="1" x:FullRows="1">
+  <Column ss:Width="170"/>
+  <Column ss:Width="280"/>
+  <Column ss:Width="330"/>
+  <Row>
+  <Cell ss:StyleID="s1"><Data ss:Type="String" >Case Number</Data></Cell>
+  <Cell ss:StyleID="s1"><Data ss:Type="String" >Subject</Data></Cell>
+  <Cell ss:StyleID="s1"><Data ss:Type="String" >Status</Data></Cell>    
+  <Cell ss:StyleID="s1"><Data ss:Type="String" >Date/Time Opened</Data></Cell>
+  <Cell ss:StyleID="s1"><Data ss:Type="String" >Case Owner Alias</Data></Cell>
+  </Row>
+  <apex:repeat value="{!caseList}" var="case">
+  <Row>
+  <Cell><Data ss:Type="String">{!case.CaseNumber}</Data></Cell>
+  <Cell><Data ss:Type="String">{!case.Subject}</Data></Cell>
+  <Cell><Data ss:Type="String">{!case.Status}</Data></Cell>
+  <Cell><Data ss:Type="String">{!case.CreatedDate}</Data></Cell>
+  <Cell><Data ss:Type="String">{!case.OwnerId}</Data></Cell>    
+  </Row>
+  </apex:repeat>
+</Table>
+ </Worksheet>         
+ <Worksheet ss:Name="Contacts">
+  <Table x:FullColumns="1" x:FullRows="1">
+  <Column ss:Width="170"/>
+  <Column ss:Width="280"/>
+  <Column ss:Width="330"/>
+  <Row>
+  <Cell ss:StyleID="s1"><Data ss:Type="String" >Contact Name</Data></Cell>
+   <Cell ss:StyleID="s1"><Data ss:Type="String" >Email</Data></Cell>
+   <Cell ss:StyleID="s1"><Data ss:Type="String" >Account Name</Data></Cell>
+  </Row>
+  <apex:repeat value="{!contactList}" var="contact">
+  <Row>
+  <Cell><Data ss:Type="String">{!contact.name}</Data></Cell>
+  <Cell><Data ss:Type="String">{!contact.email}</Data></Cell>
+  <Cell><Data ss:Type="String">{!contact.account.name}</Data></Cell>
+   </Row>
+  </apex:repeat>
+</Table>
+ </Worksheet>
+     
+</Workbook>
+</apex:page>

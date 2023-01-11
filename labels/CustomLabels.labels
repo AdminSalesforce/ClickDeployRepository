@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Technology_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test_Deployment2</shortDescription>
+        <value>0987654321</value>
+    </labels>
+    <labels>
+        <fullName>Test_Deployment_lable</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test_Deployment lable</shortDescription>
+        <value>1234567890</value>
+    </labels>
+</CustomLabels>

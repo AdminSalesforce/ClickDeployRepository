@@ -1,0 +1,137 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" controller="MasterEmailSaverSenderController">
+    <aura:attribute name="emailMessage" type="Email_Message__c" default="{'sObjectType':'Email_Message__c','Bcc_Address__c':'','Body__c':' ',
+                                                                        'Cc_Address__c':'','Name':'','Letter_Template__c':'','Parent_Case__c':'',
+                                                                        'Related_To_Contact__c':'','Status__c':'','Subject__c':'','To_Address__c':''}"/>
+    <aura:attribute name="letterTemplate" type="Letter_Template__c" default="{'sObjectType':'Letter_Template__c','Brand__c':' ','Footer__c':' ',
+                                                                              'Header__c':' ','Language__c':' ','Name':' ','Salutation__c':' '}"/>
+    <aura:attribute name="openModal" type="boolean" default="false"/>
+    <aura:attribute name="openQuickText" type="boolean" default="false"/>
+    <aura:attribute name="accountRec" type="Account" default="{'sObjectType':'Account','Name':''}"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="vfUrl" type="String" />
+    <aura:attribute name="selectedRecordId" type="Id" default="" />
+    <aura:attribute name="isLoaded" type="Boolean" default="false" access="private" />
+    <aura:attribute name="fromAddressEmail" type="String" access="private" />
+    <aura:attribute name="parentCaseId" type="String" access="private" />
+    <aura:attribute name="parentMailId" type="String" access="private" />
+
+    <aura:attribute name="receiverContact" type="Contact" default="{'sObjectType':'Contact','Name':'','Email':''}"/>
+
+    <aura:handler name="onchange" event="l_lookup:OnChange" action="{!c.getTemplateCon}"/>
+    <aura:handler name="deleteAttachment" event="c:AttachmentDeleteEvent" action="{!c.deleteAttachmentClient}"/>
+    <aura:handler name="closePreviewEvent" event="c:PreviewEmailTemplateEvent" action="{!c.closePreviewModal}"/>
+    <aura:handler name="quickTextAdding" event="c:QuickTextEvent" action="{!c.addQuickText}"/>
+    <aura:handler name="attachmentSender" event="c:AttachmentSenderEvent" action="{!c.attachmentsLog}"/>
+
+    <ltng:require scripts="{! $Resource.LightningUtils }" afterScriptsLoaded="{! c.doInit }" />
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <aura:html tag="style">
+        .slds-modal__container {
+            max-width: 70rem !important;
+            width:80% !important;
+        }
+
+        .l_lookupLookup .synebo-lookup {
+            max-width: 100% !important;
+        }
+
+        .forceChatterBasePublisher .cuf-scroller-inside {
+            background: white; 
+        }
+    </aura:html>
+
+    <div>
+        <!-- MODAL HEADER -->
+        <div class="header slds-clearfix slds-border_bottom slds-m-bottom_small slds-p-around_x-small slds-table--header-fixed" style="border-bottom-color: #00ace6">
+            <div class="slds-float_right">
+            </div>
+            <div class="slds-float_left">
+                <lightning:icon iconName="utility:email" class="slds-float_left" size="small" alternativeText="Mail"/>
+                <label id="modal-heading-01" class="slds-text-heading_medium slds-text-align_right">New Email</label>
+            </div>
+        </div>
+        <!-- / MODAL HEADER -->
+
+        <!-- MODAL BODY --> 
+        <div class="content">
+            <aura:if isTrue="{! not(v.isLoaded) }">
+                <lightning:spinner alternativeText="Loading" size="large" />
+                <aura:set attribute="else">
+            
+                    <div class="slds-box slds-box_x-small slds-clearfix">
+                        <lightning:icon iconName="standard:account" class="slds-float_left" size="small" alternativeText="Account"/>
+                        <ui:outputText class="inputcc" value="{!v.accountRec.Name}"/>
+                    </div>
+                    <div class="slds-box nopadding flex">
+                        <label class="slds-box slds-box_xx-small label">From</label>
+                        <lightning:input value="{! v.fromAddressEmail }" variant="label-hidden" readonly="true" aura:id="inputFromAddress" />
+                    </div>
+                    <div class="slds-box nopadding flex">
+                        <label class="slds-box slds-box_xx-small label"><span id="To">To</span></label>
+                        <l_lookup:Lookup aura:id="myLookup" 
+                                  objectType="Contact"
+                                  selectedRecordId="{!v.selectedRecordId}"
+                                  additionalField="Email"
+                                  queryCondition="{! 'AccountId=\'' + v.accountRec.Id + '\'' }"
+                                  isRequired="true"/>
+                    </div>
+                    <div class="slds-box nopadding flex">
+                        <label class="slds-box slds-box_xx-small label">Cc</label>
+                        <lightning:input value="{!v.emailMessage.Cc_Address__c}" maxlength="4000" variant="label-hidden"/>
+                    </div>
+                    <div class="slds-box nopadding flex">
+                        <label class="slds-box slds-box_xx-small label">Bcc</label>
+                        <lightning:input value="{!v.emailMessage.Bcc_Address__c}" maxlength="4000" variant="label-hidden"/>
+                    </div>
+                    <div class="slds-box nopadding flex">
+                        <label class="slds-box slds-box_xx-small label">Subject</label>
+                        <lightning:input value="{!v.emailMessage.Subject__c}" maxlength="3000" variant="label-hidden"/>
+                    </div>
+                    <c:EmailFileUpload emailId="{! v.emailMessage.Id }" /> 
+                </aura:set>
+            </aura:if> 
+        
+            <div class="slds-box slds-box_small rich">
+                <b>Header</b>
+                <ui:outputRichText class="slds-text-longform slds-p-around_x-large" value="{!v.letterTemplate.Header__c}"/>
+            </div>
+            <div class="slds-box slds-box_small">
+                <b>Salutation:&nbsp;&nbsp;&nbsp;</b>
+                <ui:outputText value="{!v.letterTemplate.Salutation__c}"/>
+            </div>
+            <div class="slds-box nopadding">
+                <iframe aura:id="vfFrame" class="frame" src="{!v.vfUrl + '/apex/TextEditorContainerForTemplateComposer'}" scrolling="no"/>
+            </div>
+            <div class="slds-box slds-box_small rich">
+                <b>Footer</b>
+                <ui:outputRichText class="slds-text-longform slds-p-around_large" value="{!v.letterTemplate.Footer__c}"/>
+            </div>
+
+        </div>
+        <!-- / MODAL BODY -->  
+        
+        <!-- MODAL FOOTER -->
+        <div class="actions slds-clearfix slds-p-around_x-small">   
+            <div class="slds-float_right">    
+                <lightning:button label="SAVE" onclick="{!c.saveEmail}"/>
+                <lightning:button label="PREVIEW" onclick="{!c.openPreviewModal}"/>
+                <lightning:button label="QUICK TEXT" onclick="{!c.openQuickTextModal}"/>
+                <lightning:button label="SEND" variant="brand" onclick="{!c.sendEmail}"/>
+            </div>
+        </div>
+        <!-- / MODAL FOOTER -->
+    </div>
+
+    <!-- PREVIEW EMAIL MODAL-->
+    <aura:if isTrue="{!v.openModal}">
+        <c:EmailTemplatePreviewLightningComponent footerPrev="{!v.letterTemplate.Footer__c}" headerPrev="{!v.letterTemplate.Header__c}" salutationsPrev="{!v.letterTemplate.Salutation__c}" bodyPrev="{!v.emailMessage.Body__c}" caseId="{!v.parentCaseId}" subject="{!v.emailMessage.Subject__c}"/>
+    </aura:if>
+    <!-- / PREVIEW EMAIL MODAL -->
+
+    <!-- PREVIEW EMAIL MODAL -->
+    <aura:if isTrue="{!v.openQuickText}">
+        <c:QuickTextSelector isOpen="true" contactId="{!v.selectedRecordId}"/>
+    </aura:if>
+    <!-- / PREVIEW EMAIL MODAL -->
+</aura:component>

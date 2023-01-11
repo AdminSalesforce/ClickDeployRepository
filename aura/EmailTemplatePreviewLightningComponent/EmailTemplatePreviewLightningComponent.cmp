@@ -1,0 +1,43 @@
+<aura:component controller="MasterEmailSaverSenderController">
+	<aura:attribute name="headerPrev" type="String"/>
+    <aura:attribute name="subject" type="String"/>
+    <aura:attribute name="PreviewBody" type="String"/>
+    <aura:attribute name="footerPrev" type="String"/>
+    <aura:attribute name="salutationsPrev" type="String"/>
+    <aura:attribute name="caseId" type="String"/>
+    <aura:attribute name="bodyPrev" type="String"/>
+    <aura:registerEvent name="closePreviewEvent" type="c:PreviewEmailTemplateEvent"/>
+    <ltng:require scripts="{! $Resource.LightningUtils }" afterScriptsLoaded="{! c.doInit }" />
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+
+    <div class="slds-m-around_xx-large">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header slds-clearfix slds-p-around_small" style="border-bottom-color: #00ace6">
+                        <div class="slds-float_left">
+                                <lightning:icon iconName="utility:email" class="slds-float_left" size="small" alternativeText="Mail"/>
+                                <label id="modal-heading-01" class="slds-text-heading_medium slds-text-align_right">Preview</label>
+                        </div>
+                        <div class="slds-float_right">
+                            <lightning:buttonIcon iconName="utility:close"
+                                                  onclick="{! c.closeModel }"
+                                                  alternativeText="Close"
+                                                  variant="bare"
+                                                  class="slds-button slds-button__icon"/>
+                        </div>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_large" id="modal-content-id-1">
+                        <div>
+                            <div>
+                                <div class="slds-border_bottom"><ui:outputRichText class="slds-text-longform" value="{!v.subject}"/></div>
+                                <div class="slds-card slds-has-bottom-magnet slds-p-around_large preview_header"><ui:outputRichText class="slds-text-longform" value="{!v.headerPrev}"/></div>
+                                <div class="slds-p-around_medium preview_body"><ui:outputRichText class="slds-text-longform" value="{!v.PreviewBody}"/></div>
+                                <div class="slds-card slds-has-top-magnet slds-p-around_large preview_footer"><ui:outputRichText class="slds-text-longform" value="{!v.footerPrev}"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</aura:component>

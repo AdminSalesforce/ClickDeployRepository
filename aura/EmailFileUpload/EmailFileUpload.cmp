@@ -1,0 +1,35 @@
+<aura:component controller="MasterEmailSaverSenderController">
+  <!-- internal attributes -->
+  <aura:attribute name="files" type="Object[]" access="private" />
+  <aura:attribute name="loaded" type="Boolean" default="false" access="private" />
+
+  <!-- public attributes -->
+  <aura:attribute name="emailId" type="Id" />
+
+  <!-- scripts -->
+  <ltng:require scripts="{! $Resource.LightningUtils }" afterScriptsLoaded="{! c.doInit }" />
+
+  <!-- handlers -->
+  <aura:handler name="change" value="{! v.emailId }" action="{! c.doInit }"/>
+
+  <!-- markup -->
+  <lightning:notificationsLibrary aura:id="notifLib"/>
+  <div>
+      <aura:if isTrue="{! v.loaded }">
+          <lightning:fileUpload name="fileUploader" multiple="true" recordId="{! v.emailId }" onuploadfinished="{! c.handleUploadFinished }" />
+          
+          <aura:iteration items="{! v.files }" var="item">
+              <div id="{!item.fileId}" class="slds-box slds-box_xx-small uploaded_files">
+                  <span class="filename">{!item.fileName}</span><span class="filesize">({!item.fileSize})</span>
+                  <lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{! c.handleDeleteFile }" alternativeText="Delete File" />
+              </div>
+          </aura:iteration>
+
+          <aura:set attribute="else">
+              <div class="spinnerHolder">
+                  <lightning:spinner alternativeText="Loading" variant="brand" />
+              </div>
+          </aura:set>
+      </aura:if>
+  </div>
+</aura:component>

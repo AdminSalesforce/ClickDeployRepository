@@ -1,0 +1,56 @@
+<aura:component controller="QuickTextSelectorController">
+    <ltng:require scripts="{!$Resource.jQueryv3}" />
+    
+    <aura:registerEvent name="quickTextAdding" type="c:QuickTextEvent"/>
+
+    <aura:attribute name="isOpen" type="boolean" default="true"/>  
+    <aura:attribute name="quick_text" type="Quick_Text__c[]"/>
+    <aura:attribute name="searched_quick_text" type="Quick_Text__c[]"/>
+    <aura:attribute name="contactId" type="Id" default=""/>
+    <aura:attribute name="current_quick_text_content" type="string"/>
+    <aura:handler name="init" value="{!this}" action="{!c.allMatchingQuickText}" />
+    <ltng:require scripts="{! $Resource.LightningUtils }"/>
+
+    <div class="slds-m-around_xx-large">
+        <aura:if isTrue="{!v.isOpen}">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="quicktext">
+                        <div class="header">  
+                                <lightning:input
+                                    aura:id="enter-search"
+                                    name="inline-search-input"
+                                    label="This is a search input with a hidden label. The label is still required for accessibility reasons"
+                                    type="search"
+                                    variant="label-hidden"
+                                    placeholder="Search quick text..."
+                                    onchange="{! c.getSearchedQuickText }"
+                                />
+                                <lightning:buttonIcon 
+                                    iconName="utility:add"  
+                                    variant="border-filled" 
+                                    alternativeText=""
+                                    onclick="{!c.addQuickText}"/>
+                                <lightning:buttonIcon 
+                                    iconName="utility:close"  
+                                    variant="border-filled" 
+                                    alternativeText=""
+                                    onclick="{!c.closeModel}"/>
+                        </div>
+                        <div class="body">  
+                                <div class="names">
+                                    <aura:iteration items="{!v.searched_quick_text}" var="item">
+                                        <button type="button" class="name_block" onclick="{!c.getContent}">{!item.Name}</button>
+                                    </aura:iteration>
+                                </div>
+                                <div class="content">
+                                    <ui:outputText value="{!v.current_quick_text_content}"/>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,27 @@
+<apex:page sidebar="false" showHeader="false">
+    <script src="https://cdn.ckeditor.com/4.11.4/standard-all/ckeditor.js"></script>
+    <apex:form >
+        <apex:inputtextarea id="texteditor" styleClass="ckeditor" richtext="false" onkeyup="sendData()"/>
+        <script type="text/javascript">
+            var lexOrigin = "{! $Setup.EmailSettings__c.Lightning_Force_com_URL__c }";
+            CKEDITOR.config.scayt_autoStartup = true;
+            CKEDITOR.config.height = '450pt';
+            CKEDITOR.replaceClass = 'ckeditor';
+            CKEDITOR.on("instanceCreated", function(event) {
+                event.editor.on("change", function () {
+                    var message = event.editor.getData();
+                    parent.postMessage(message, lexOrigin);
+                });
+            });
+            CKEDITOR.on("instanceReady", function(event) {
+                event.editor.execCommand('maximize');
+            });
+            window.addEventListener("message", function(event) {
+                if (event.origin !== lexOrigin) {
+                    return;
+                }
+                CKEDITOR.instances["j_id0:j_id2:texteditor"].setData(event.data);
+            }, false);
+        </script>
+    </apex:form>
+</apex:page>

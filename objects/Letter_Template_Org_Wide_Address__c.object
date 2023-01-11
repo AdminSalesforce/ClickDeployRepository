@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Organization_Wide_Email_Address_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Organization-Wide Email Address Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Letter Template Org Wide Address</label>
+    <visibility>Public</visibility>
+</CustomObject>

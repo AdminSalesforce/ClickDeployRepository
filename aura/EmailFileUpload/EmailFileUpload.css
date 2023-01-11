@@ -1,0 +1,31 @@
+.THIS .spinnerHolder {
+    position: relative;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+.THIS .slds-box_xx-small {
+    height: 1.5rem;
+}
+
+.THIS .uploaded_files {
+    white-space:nowrap;
+    padding: 0.1rem 0px 0px 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0;
+    font-size: 0.8rem;
+
+    /*float: left;*/
+    margin: 3px;
+}
+
+.THIS .filename {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.THIS .filesize {
+    font-size: 0.7rem;
+    color: grey;
+}

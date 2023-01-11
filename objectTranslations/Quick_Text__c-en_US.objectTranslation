@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Quick Text</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Quick Texts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+        <relationshipLabel><!-- Quick Texts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <relationshipLabel><!-- Quick Texts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quick Text Category --></label>
+        <name>Quick_Text_Category__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quick Text Message --></label>
+        <name>Quick_Text_Message__c</name>
+    </fields>
+    <layouts>
+        <layout>Quick Text Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

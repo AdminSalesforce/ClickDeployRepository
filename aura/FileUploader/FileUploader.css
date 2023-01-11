@@ -1,0 +1,54 @@
+.THIS .upload_button {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    padding: 0.1rem 0 0 0;
+}
+.THIS .uploaded_files {
+    white-space:nowrap;
+    padding: 0.1rem 0px 0px 0.5rem;
+    min-width: 10rem;
+    max-width: 10rem;
+    margin-right: 0.5rem;
+    border-radius: 0;
+    font-size: 0.8rem;
+}
+
+.THIS .slds-box_xx-small {
+    height: 1.5rem;
+}
+
+.THIS .filesize {
+    font-size: 0.7rem;
+    color: grey;
+}
+
+.THIS .filename {
+    float: left;
+    max-width: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.THIS .fileextension {
+    max-width: 2rem;
+}
+
+.THIS .slds-button {
+    margin: 0.0625rem 0.25rem 0 0;
+    float: right;
+}
+
+.THIS .slds-form-element {
+    border: none;
+    padding: 0;
+    min-width: 2rem;
+}
+
+.THIS .invisible {
+    display : none;
+}
+
+.THIS #button {
+    width: 0;
+}

@@ -1,0 +1,26 @@
+.THIS {
+}
+.THIS .backbtn {
+    background-color:rgb(107, 109, 112);  
+    color: white;
+}
+.THIS .preview_body {
+    padding: 0 0 0 1.5rem;
+}
+.THIS .preview_header {
+    padding-bottom: 0;
+}
+.THIS .preview_header p {
+    margin-bottom: 0;
+}
+.THIS .preview_footer {
+    padding-top: 0;
+}
+@media (min-width: 48em) {
+    .THIS .slds-modal__container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 50rem;
+        min-width: 30rem;
+    }
+}

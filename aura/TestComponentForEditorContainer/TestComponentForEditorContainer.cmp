@@ -1,0 +1,7 @@
+<aura:component>
+	<aura:attribute name="messageBody" type="String"/>
+    <aura:attribute name="vfUrl" type="String" default="demandbluelabs--dev02--c.visualforce.com"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <iframe aura:id="vfFrame" src="{!'https://' + v.vfUrl + '/apex/TextEditorContainerForTemplateComposer'}" Style="width:500px; height: 370px;"/>
+    <h1>{!v.messageBody}</h1>
+</aura:component>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Email Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Email Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Internal Image URL Domain --></label>
+        <name>Internal_Image_URL_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lightning Force.com URL --></label>
+        <name>Lightning_Force_com_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Image URL Domain --></label>
+        <name>Public_Image_URL_Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visualforce URL --></label>
+        <name>Visualforce_URL__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

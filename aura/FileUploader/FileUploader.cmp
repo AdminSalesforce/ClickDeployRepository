@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">   
+    <ltng:require scripts="{!$Resource.jQueryv3}" />
+    <aura:registerEvent name="deleteAttachment" type="c:AttachmentDeleteEvent"/>
+    <aura:registerEvent name="attachmentSender" type="c:AttachmentSenderEvent"/>
+    <aura:attribute name="encodedFilesInfo" type="Object[]" />
+    <aura:attribute name="files" type="Object[]" />
+    <aura:attribute name="filesDescription" type="Object[]" />
+    <ltng:require scripts="{! $Resource.LightningUtils }" afterScriptsLoaded="{! c.doInit }" />
+    <div class="slds-box slds-grid slds-box_xx-small slds-theme--default slds-scrollable">
+        <div class="slds-box slds-form-element" id="button">
+            <input type="file" class="slds-file-selector__input slds-assistive-text" id="file-upload-input-01" onchange="{! c.handleFilesChange }" />
+            <label class="slds-file-selector__body" for="file-upload-input-01" id="file-selector-secondary-label">
+                <img src="{!$Resource.attach_icon}" class = "upload_button"/>
+            </label>
+        </div>
+           
+        <aura:iteration items="{!v.filesDescription}" var="item">
+            <div id="{!item.name + item.extension}" class="slds-box slds-box_xx-small slds-col slds-theme--default uploaded_files child">
+                <span class="filename">{!item.name}</span><span class="filename fileextension">{!item.extension} </span><span class="filesize"> {!item.size}</span>
+                <lightning:buttonIcon aura:id="{!item.name}" iconName="utility:close" variant="bare" onclick="{! c.deleteAttachment }" alternativeText="Settings" />
+            </div>
+        </aura:iteration>
+   </div>
+</aura:component>

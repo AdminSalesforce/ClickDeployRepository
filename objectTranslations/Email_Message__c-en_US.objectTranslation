@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Email Message</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Email Messages</value>
+    </caseValues>
+    <fields>
+        <label><!-- Base Parent ID --></label>
+        <name>Base_Parent_ID__c</name>
+        <relationshipLabel><!-- Email Messages (Base Parent ID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bcc Address --></label>
+        <name>Bcc_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Body --></label>
+        <name>Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cc Address --></label>
+        <name>Cc_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Date --></label>
+        <name>Email_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Address --></label>
+        <name>From_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Immediate Parent ID --></label>
+        <name>Immediate_Parent_ID__c</name>
+        <relationshipLabel><!-- Email Messages (Immediate Parent ID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Letter Template --></label>
+        <name>Letter_Template__c</name>
+        <relationshipLabel><!-- Email Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Case --></label>
+        <name>Parent_Case__c</name>
+        <relationshipLabel><!-- Email Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related To Contact --></label>
+        <name>Related_To_Contact__c</name>
+        <relationshipLabel><!-- Email Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Address --></label>
+        <name>To_Address__c</name>
+    </fields>
+    <layouts>
+        <layout>Email Message Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Reply Mail --></label>
+        <name>Reply_Mail</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

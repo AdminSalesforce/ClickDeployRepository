@@ -1,0 +1,18 @@
+<apex:page controller="ODSCaseController" >
+    <head>
+        <script>
+         function downloadAsExcelFunction()
+            {
+                DownloadAsExcelActionCall();
+            }
+        </script>
+    </head>
+    <body>
+    <apex:form >
+        <apex:actionFunction name="DownloadAsExcelActionCall" action="{!downloadAsExcel}" />
+
+        <apex:commandButton id="downloadExcel" title="Download Cases" value="Download Cases" onclick="downloadAsExcelFunction(); return false;" />
+    </apex:form>
+    </body>
+
+</apex:page>
