@@ -21,10 +21,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Address_1__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
@@ -155,7 +151,6 @@
     <miniLayout>
         <fields>Account_Email_Address__c</fields>
         <fields>Account_Type_Select__c</fields>
-        <fields>Address_1__c</fields>
     </miniLayout>
     <platformActionList>
         <actionListContext>Record</actionListContext>

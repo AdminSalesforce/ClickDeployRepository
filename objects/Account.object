@@ -293,7 +293,7 @@
         <fullName>Address_1__c</fullName>
         <externalId>false</externalId>
         <label>Address 1</label>
-        <required>true</required>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>TextArea</type>
     </fields>

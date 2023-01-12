@@ -12,14 +12,14 @@ public class AccountHandlerTest {
         init();
         Test.startTest();
         AccountHandler.queryaccount();
-        //AccountHandler.queryAccDescription();
+        AccountHandler.queryAccDescription();
         Test.stopTest();
     }
       public static testmethod void test1(){
         init();
         Test.startTest();
         AccountHandler.queryaccount();
-        //AccountHandler.queryAccDescription();
+        AccountHandler.queryAccDescription();
         Test.stopTest();
     }
 
