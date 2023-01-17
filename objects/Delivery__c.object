@@ -162,6 +162,15 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Ema_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Ema Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Scheduled_Date__c</fullName>
         <externalId>false</externalId>
         <label>Scheduled Date</label>

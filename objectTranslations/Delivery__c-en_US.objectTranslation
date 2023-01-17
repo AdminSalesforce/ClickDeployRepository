@@ -13,6 +13,10 @@
         <name>Description__c</name>
     </fields>
     <fields>
+        <label><!-- Ema Address --></label>
+        <name>Ema_Address__c</name>
+    </fields>
+    <fields>
         <label><!-- Scheduled Date --></label>
         <name>Scheduled_Date__c</name>
     </fields>

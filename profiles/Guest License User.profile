@@ -1177,6 +1177,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Delivery__c.Ema_Address__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Delivery__c.Scheduled_Date__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1188,6 +1193,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Delivery__c.Supplier__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Department__c.Department_Email__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
