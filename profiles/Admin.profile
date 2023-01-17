@@ -1192,6 +1192,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Department__c.Department_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Department__c.Dept_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>

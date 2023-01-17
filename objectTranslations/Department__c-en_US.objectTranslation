@@ -9,6 +9,10 @@
         <value>Departments</value>
     </caseValues>
     <fields>
+        <label><!-- Department Email --></label>
+        <name>Department_Email__c</name>
+    </fields>
+    <fields>
         <label><!-- Dept Code --></label>
         <name>Dept_Code__c</name>
     </fields>
